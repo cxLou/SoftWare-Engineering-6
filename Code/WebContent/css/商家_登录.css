@@ -1,0 +1,73 @@
+body{
+    background-color:#1ABC9C ;
+}
+
+.container{
+    width: 343px;
+    height: 420px;
+    /* border: 2px solid red; */
+    box-sizing: border-box;
+    margin: 100px auto;
+    background: #fff;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.container .content h2{
+    text-align: center;
+    margin: 50px auto;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1ABC9C;
+}
+
+.container .content .form .logon{
+    background: #1ABC9C;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.container .content .form .account{
+    background-image:url("../img/account.jpg");
+    background-repeat: no-repeat;
+    background-position: 4px;
+}
+
+.container .content .form .pwd{
+    background-image:url("../img/pwd.jpg");
+    background-repeat: no-repeat;
+    background-position: 7px;
+}
+
+
+input[type="text"],input[type="password"],input[type="submit"]{
+    width: 300px;
+    height: 50px;
+    margin: 15px;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+input[type="text"]:focus,input[type="password"]:focus{
+    outline:none;
+    border: 2px solid #1ABC9C;
+}
+
+.container .content .form .logon:hover{
+    background: rgb(37, 204, 171);
+}
+
+
+input[type="text"]::placeholder,input[type="password"]::placeholder{
+    color: #999;
+    font-size: 13px;
+    text-indent: 3em;
+}
+
+input[type="text"],input[type="password"]{
+    text-indent: 3em;
+}
+
+
