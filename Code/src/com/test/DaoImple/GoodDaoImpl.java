@@ -5,6 +5,9 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.mysql.cj.protocol.Resultset;
 import com.test.Dao.*;
 import com.test.vo.Goods;
 public class GoodDaoImpl implements GoodDao{
@@ -40,6 +43,24 @@ public class GoodDaoImpl implements GoodDao{
 		catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		
+	}
+
+	public void showGood(String GoodName) throws Exception {
+		// TODO Auto-generated method stub
+		Class.forName(driver);
+		Connection conn = DriverManager.getConnection(url, username, password);
+		String sql = "Select name from good where GoodName=?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, GoodName);
+		ResultSet res = ps.executeQuery();
+		while(res.next()) {
+			Float GoodPrice = res.getFloat("GoodPrice");
+			InputStream is = res.getBinaryStream("GoodImage");
+			is.skip(0);
+			showReportImage(is);
+			String GoodDescribe = res.getString("GoodDescribe");
 		}
 		
 	}

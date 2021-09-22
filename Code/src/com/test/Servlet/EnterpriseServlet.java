@@ -85,7 +85,7 @@ public class EnterpriseServlet extends HttpServlet {
 		if(ed.checkEnterprise(username, pwd)) {
 			session.setAttribute("enterprise", e);
 			System.out.println(ed.checkEnterprise(username, pwd));
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("seller_index.jsp");
 		}else {
 			request.setAttribute("enterprise01", e);
 			response.sendRedirect("seller_logon_fail.jsp");
